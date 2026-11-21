@@ -35,19 +35,16 @@
   const modal = $('#resumeModal');
   const dialog = $('.resume-dialog', modal || document);
   const openResumeButton = $('#openResume');
-  const downloadResumeButton = $('#downloadResume');
   const closeResumeButton = $('#closeResume');
-  const printResumeButton = $('#printResume');
   let lastFocusedElement = null;
 
-  const openResume = (printAfterOpen = false) => {
+  const openResume = () => {
     if (!modal || !dialog) return;
     lastFocusedElement = document.activeElement;
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
     closeResumeButton?.focus();
-    if (printAfterOpen) window.setTimeout(() => window.print(), 220);
   };
   const closeResume = () => {
     if (!modal) return;
@@ -56,10 +53,8 @@
     document.body.classList.remove('modal-open');
     lastFocusedElement?.focus?.();
   };
-  openResumeButton?.addEventListener('click', () => openResume(false));
-  downloadResumeButton?.addEventListener('click', () => openResume(true));
+  openResumeButton?.addEventListener('click', openResume);
   closeResumeButton?.addEventListener('click', closeResume);
-  printResumeButton?.addEventListener('click', () => window.print());
   modal?.addEventListener('click', (event) => { if (event.target === modal) closeResume(); });
 
   document.addEventListener('keydown', (event) => {

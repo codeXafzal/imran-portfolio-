@@ -236,7 +236,7 @@ h1 { margin-bottom: 18px; font: 800 clamp(3.6rem, 7.1vw, 6.8rem)/.99 var(--font-
 .toolbar-eyebrow { color: #8ec8bb; font-size: .55rem; font-weight: 800; letter-spacing: .16em; }
 .resume-toolbar strong { font: 700 .95rem var(--font-display); }
 .resume-toolbar-actions { display: flex; align-items: center; gap: 8px; }
-.toolbar-download, .toolbar-close { min-height: 36px; border: 0; border-radius: 999px; cursor: pointer; font-size: .74rem; font-weight: 700; }
+.toolbar-download, .toolbar-close { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; border: 0; border-radius: 999px; cursor: pointer; font-size: .74rem; font-weight: 700; text-decoration: none; }
 .toolbar-download { padding: 0 14px; color: #06251f; background: #70e4c6; }
 .toolbar-close { width: 36px; color: #f0f7f5; background: rgba(255,255,255,.12); font-size: .9rem; }
 .resume-scroll { overflow: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
